@@ -1,0 +1,68 @@
+collections:
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    label: "Blog" # Used in the UI
+    folder: "src/content/blog" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields:
+      - { label: "Title", name: "_title_", widget: "string", required: true }
+      - {
+          label: "Description",
+          name: "_description_",
+          widget: "string",
+          required: true,
+        }
+      - {
+          label: "Publish Date",
+          name: "_pubDatetime_",
+          widget: "datetime",
+          required: true,
+        }
+      - {
+          label: "Modified Date",
+          name: "_modDatetime_",
+          widget: "datetime",
+          required: false,
+        }
+      - {
+          label: "Author",
+          name: "_author_",
+          widget: "string",
+          default: "SITE.author",
+        }
+      - {
+          label: "Slug",
+          name: "_slug_",
+          widget: "string",
+          default: "slugified file name",
+          required: false,
+        }
+      - {
+          label: "Featured",
+          name: "_featured_",
+          widget: "boolean",
+          default: false,
+        }
+      - { label: "Draft", name: "_draft_", widget: "boolean", default: false }
+      - { label: "Tags", name: "_tags_", widget: "list", default: ["others"] }
+      - {
+          label: "OG Image",
+          name: "_ogImage_",
+          widget: "image",
+          default: "SITE.ogImage",
+        }
+      - {
+          label: "Canonical URL",
+          name: "_canonicalURL_",
+          widget: "string",
+          default: "Astro.site + Astro.url.pathname",
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+media_folder: "src/assets/images" # Location where files will be stored in the repo
+public_folder: "public/assets/images" # The src attribute for uploaded media
+backend:
+  name: github
+  branch: main # change this to your branch
+  repo: vemas23/blog # change this to your repo
+  site_domain: vemas.is-a.dev # change this to your domain
+  base_url: https://vemas.is-a.dev # change this to your prod URL
+  auth_endpoint: oauth # the oauth route provided by the integration

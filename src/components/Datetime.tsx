@@ -35,16 +35,18 @@ export default function Datetime({
         } inline-block h-6 w-6 min-w-[1.375rem] fill-skin-base`}
         aria-hidden="true"
       >
-        <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path>
-        <path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path>
+        <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z">
+        </path>
+        <path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z">
+        </path>
       </svg>
-      {modDatetime && modDatetime > pubDatetime ? (
-        <span className={`italic ${size === "sm" ? "text-sm" : "text-base"}`}>
-          Updated:
-        </span>
-      ) : (
-        <span className="sr-only">Published:</span>
-      )}
+      {modDatetime && modDatetime > pubDatetime
+        ? (
+          <span className={`italic ${size === "sm" ? "text-sm" : "text-base"}`}>
+            Updated:
+          </span>
+        )
+        : <span className="sr-only">Published:</span>}
       <span className={`italic ${size === "sm" ? "text-sm" : "text-base"}`}>
         <FormattedDatetime
           pubDatetime={pubDatetime}
@@ -58,7 +60,7 @@ export default function Datetime({
 
 const FormattedDatetime = ({ pubDatetime, modDatetime }: DatetimesProps) => {
   const myDatetime = new Date(
-    modDatetime && modDatetime > pubDatetime ? modDatetime : pubDatetime
+    modDatetime && modDatetime > pubDatetime ? modDatetime : pubDatetime,
   );
 
   const date = myDatetime.toLocaleDateString(LOCALE.langTag, {
@@ -75,7 +77,7 @@ const FormattedDatetime = ({ pubDatetime, modDatetime }: DatetimesProps) => {
   return (
     <>
       <time dateTime={myDatetime.toISOString()}>{date}</time>
-      <span aria-hidden="true"> | </span>
+      <span aria-hidden="true">|</span>
       <span className="sr-only">&nbsp;at&nbsp;</span>
       <span className="text-nowrap">{time}</span>
     </>
@@ -85,8 +87,8 @@ const FormattedDatetime = ({ pubDatetime, modDatetime }: DatetimesProps) => {
 const EditPost = ({ editPost, postId }: EditPostProps) => {
   let editPostUrl = editPost?.url ?? SITE?.editPost?.url ?? "";
   const showEditPost = !editPost?.disabled && editPostUrl.length > 0;
-  const appendFilePath =
-    editPost?.appendFilePath ?? SITE?.editPost?.appendFilePath ?? false;
+  const appendFilePath = editPost?.appendFilePath ??
+    SITE?.editPost?.appendFilePath ?? false;
   if (appendFilePath && postId) {
     editPostUrl += `/${postId}`;
   }
@@ -95,7 +97,7 @@ const EditPost = ({ editPost, postId }: EditPostProps) => {
   return (
     showEditPost && (
       <>
-        <span aria-hidden="true"> | </span>
+        <span aria-hidden="true">|</span>
         <a
           className="space-x-1.5 hover:opacity-75"
           href={editPostUrl}

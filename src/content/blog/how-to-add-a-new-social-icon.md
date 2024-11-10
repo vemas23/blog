@@ -10,21 +10,25 @@ tags:
 description: How to add a new social icon to AstroPaper
 ---
 
-Hot new platform? Niche corner of the internet? Or one specific to your area? This post will guide you through how to add a new social icon to the theme.
+Hot new platform? Niche corner of the internet? Or one specific to your area?
+This post will guide you through how to add a new social icon to the theme.
 
 ## Table of contents
 
 ## Merging back to the theme
 
-The maintainer of the theme [Sat Naing](https://github.com/satnaing) has said that he intends to only
+The maintainer of the theme [Sat Naing](https://github.com/satnaing) has said
+that he intends to only
 
 > keep the project supporting only a specific set of popular social icons.
 
-So there is a chance that your icon will not be in the repo, but fear not, it is very easy to add your own!
+So there is a chance that your icon will not be in the repo, but fear not, it is
+very easy to add your own!
 
 ## Getting things to match
 
-The icon set used by the theme come from [Tabler](https://tabler.io/icons) and there are a quite a few brands on there.
+The icon set used by the theme come from [Tabler](https://tabler.io/icons) and
+there are a quite a few brands on there.
 
 ## Adding your icon, by example
 
@@ -34,7 +38,9 @@ For this guide we are going to use the StackOverflow icon as our example.
 
 > In this case, we are going to use the `StackOverflow` as an example.
 
-Searching on Tabler for 'StackOverflow' we get a single icon <https://tabler.io/icons/icon/brand-stackoverflow>, we are going to need the svg code, so save it for later.
+Searching on Tabler for 'StackOverflow' we get a single icon
+<https://tabler.io/icons/icon/brand-stackoverflow>, we are going to need the svg
+code, so save it for later.
 
 ```html
 <svg
@@ -86,7 +92,8 @@ This should leave you with the following
 </svg>
 ```
 
-Now we can add the clean svg code to the `src/assets/socialIcons.ts` file in `SocialIcons`.
+Now we can add the clean svg code to the `src/assets/socialIcons.ts` file in
+`SocialIcons`.
 
 ```typescript
 const socialIcons = {
@@ -106,7 +113,8 @@ const socialIcons = {
 };
 ```
 
-Finally we can configure it for our blog in `src/config.ts` under `SOCIALS`. Setting `active: true` to add it to the site.
+Finally we can configure it for our blog in `src/config.ts` under `SOCIALS`.
+Setting `active: true` to add it to the site.
 
 ```typescript
 export const SOCIALS: SocialObjects = [
@@ -114,12 +122,15 @@ export const SOCIALS: SocialObjects = [
   {
     name: "StackOverflow",
     href: "https://stackoverflow.com/search?q=astropaper",
-    linkTitle: `See what questions there are about ${SITE.title} on StackOverflow`,
+    linkTitle:
+      `See what questions there are about ${SITE.title} on StackOverflow`,
     active: true,
   },
 ];
 ```
 
-> Ensure that `href` and `linkTitle` are updated for the corresponding link and label.
+> Ensure that `href` and `linkTitle` are updated for the corresponding link and
+> label.
 
-Full code for the above steps can be found in [this pull request](https://github.com/satnaing/astro-paper/pull/216/files)
+Full code for the above steps can be found in
+[this pull request](https://github.com/satnaing/astro-paper/pull/216/files)

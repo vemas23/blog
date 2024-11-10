@@ -9,15 +9,19 @@ tags:
 description: How to use LaTeX equations in your Markdown files for AstroPaper.
 ---
 
-This document demonstrates how to use LaTeX equations in your Markdown files for AstroPaper. LaTeX is a powerful typesetting system often used for mathematical and scientific documents.
+This document demonstrates how to use LaTeX equations in your Markdown files for
+AstroPaper. LaTeX is a powerful typesetting system often used for mathematical
+and scientific documents.
 
 ## Table of contents
 
 ## Instructions
 
-In this section, you will find instructions on how to add support for LaTeX in your Markdown files for AstroPaper.
+In this section, you will find instructions on how to add support for LaTeX in
+your Markdown files for AstroPaper.
 
-1. Install the necessary remark and rehype plugins by running `npm install rehype-katex remark-math katex`.
+1. Install the necessary remark and rehype plugins by running
+   `npm install rehype-katex remark-math katex`.
 
 2. Update the Astro configuration (`astro.config.ts`) to use the these plugins:
 
@@ -68,11 +72,14 @@ import { LOCALE, SITE } from "@config";
 </body>
 ```
 
-And _voilà_, this setup allows you to write LaTeX equations in your Markdown files, which will be rendered properly when the site is built. Once you do it, the rest of the document will appear rendered correctly.
+And _voilà_, this setup allows you to write LaTeX equations in your Markdown
+files, which will be rendered properly when the site is built. Once you do it,
+the rest of the document will appear rendered correctly.
 
 ## Inline Equations
 
-Inline equations are written between single dollar signs `$...$`. Here are some examples:
+Inline equations are written between single dollar signs `$...$`. Here are some
+examples:
 
 1. The famous mass-energy equivalence formula: `$E = mc^2$`
 2. The quadratic formula: `$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$`
@@ -80,7 +87,8 @@ Inline equations are written between single dollar signs `$...$`. Here are some 
 
 ## Block Equations
 
-For more complex equations or when you want the equation to be displayed on its own line, use double dollar signs `$$...$$`:
+For more complex equations or when you want the equation to be displayed on its
+own line, use double dollar signs `$$...$$`:
 
 The Gaussian integral:
 
@@ -111,7 +119,8 @@ $$
 
 LaTeX provides a wide range of mathematical symbols:
 
-- Greek letters: `$\alpha$`, `$\beta$`, `$\gamma$`, `$\delta$`, `$\epsilon$`, `$\pi$`
+- Greek letters: `$\alpha$`, `$\beta$`, `$\gamma$`, `$\delta$`, `$\epsilon$`,
+  `$\pi$`
 - Operators: `$\sum$`, `$\prod$`, `$\int$`, `$\partial$`, `$\nabla$`
 - Relations: `$\leq$`, `$\geq$`, `$\approx$`, `$\sim$`, `$\propto$`
 - Logical symbols: `$\forall$`, `$\exists$`, `$\neg$`, `$\wedge$`, `$\vee$`

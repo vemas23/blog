@@ -6,9 +6,12 @@ import remarkCollapse from "remark-collapse";
 import sitemap from "@astrojs/sitemap";
 import { SITE } from "./src/config";
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
+
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -16,6 +19,7 @@ export default defineConfig({
     react(),
     sitemap(),
   ],
+
   markdown: {
     remarkPlugins: [
       remarkToc,
@@ -32,13 +36,34 @@ export default defineConfig({
       wrap: true,
     },
   },
+
   vite: {
     optimizeDeps: {
       exclude: ["@resvg/resvg-js"],
     },
   },
+
   scopedStyleStrategy: "where",
+
   experimental: {
     contentLayer: true,
   },
+
+  output: "server",
+  adapter: cloudflare({
+    imageService: "cloudflare",
+  }),
 });
+export interface SveltiaCMSOptions {
+  adminRoute?: string;
+  oauthDisabled?: boolean;
+  oauthLoginRoute?: string;
+  oauthCallbackRoute?: string;
+}
+
+const defaultOptions: SveltiaCMSOptions = {
+  adminRoute: "/admin",
+  oauthDisabled: false,
+  oauthLoginRoute: "/oauth",
+  oauthCallbackRoute: "/oauth/callback",
+};
