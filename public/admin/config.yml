@@ -1,7 +1,7 @@
 collections:
   - name: "posts"
     label: "Posts"
-    folder: "content/posts"
+    folder: "src/content/blog"
     create: true
     slug: "{{slug}}"
     fields:
@@ -10,6 +10,7 @@ collections:
       - { label: "Publish Date", name: "pubDatetime", widget: "datetime" }
       - { label: "Featured", name: "featured", widget: "boolean", default: false }
       - { label: "Draft", name: "draft", widget: "boolean", default: false }
+      - { label: "Body", name: "body", widget: "markdown" } # This allows writing full blog posts
 
 media_folder: "src/assets/images" # Location where files will be stored in the repo
 public_folder: "src/assets/images" # The src attribute for uploaded media
