@@ -1,22 +1,17 @@
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://astro-paper.pages.dev/", // replace this with your deployed domain
+  website: "https://vem4s.is-a.dev/", // replace this with your deployed domain
   author: "Sat Naing",
-  profile: "https://satnaing.dev/",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
-  title: "AstroPaper",
+  profile: "https://vem4s.is-a.dev",
+  desc: "vem4s blog for web dev",
+  title: "vem4s blog",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 3,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
   showArchives: true,
-  editPost: {
-    url: "https://github.com/satnaing/astro-paper/edit/main/src/content/blog",
-    text: "Suggest Changes",
-    appendFilePath: true,
-  },
 };
 
 export const LOCALE = {
@@ -34,11 +29,11 @@ export const LOGO_IMAGE = {
 export const SOCIALS: SocialObjects = [
   {
     name: "Github",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "https://github.com/vemas23",
     linkTitle: ` ${SITE.title} on Github`,
     active: true,
   },
-  {
+/*  {
     name: "Facebook",
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on Facebook`,
@@ -103,14 +98,14 @@ export const SOCIALS: SocialObjects = [
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on TikTok`,
     active: false,
-  },
+  },*/
   {
     name: "CodePen",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "https://codepen.io/vem4s",
     linkTitle: `${SITE.title} on CodePen`,
     active: false,
   },
-  {
+/*  {
     name: "Discord",
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on Discord`,
@@ -121,13 +116,13 @@ export const SOCIALS: SocialObjects = [
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on GitLab`,
     active: false,
-  },
+  },*/
   {
     name: "Reddit",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "https://www.reddit.com/user/vem4s/",
     linkTitle: `${SITE.title} on Reddit`,
     active: false,
-  },
+  },/*
   {
     name: "Skype",
     href: "https://github.com/satnaing/astro-paper",
@@ -145,10 +140,10 @@ export const SOCIALS: SocialObjects = [
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on Telegram`,
     active: false,
-  },
+  },*/
   {
     name: "Mastodon",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "https://chaos.social/@vem4s",
     linkTitle: `${SITE.title} on Mastodon`,
     active: false,
   },

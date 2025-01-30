@@ -1,0 +1,23 @@
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "content/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Publish Date", name: "pubDatetime", widget: "datetime" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+
+media_folder: "src/assets/images" # Location where files will be stored in the repo
+public_folder: "src/assets/images" # The src attribute for uploaded media
+
+backend:
+  name: github
+  branch: main # change this to your branch
+  repo: vemas23/blog # change this to your repo
+  site_domain: vem4s.is-a.dev # change this to your domain
+  base_url: https://vem4s.is-a.dev # change this to your prod URL
+  auth_endpoint: oauth # the oauth route provided by the integration
